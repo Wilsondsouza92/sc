@@ -1,0 +1,22 @@
+<!--login Page-->
+<div class="modal-dialog text-center">
+  <div class="modal-content">
+    <div class="col-12 user-image">
+        <img src="../../assets/popcorn.png">
+    </div>
+      <form action="" class="col-12">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter username" [(ngModel)]="userName" name="userName" >
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Enter password" #pwd>
+        </div>     
+        <button class="btn btn-success" href="#" [routerLink]="'/dashboard'"><i class="fa fa-home"></i>Login</button>
+      </form>
+      <div class="col-12 forgot">
+        <a href="#">Forgot Password</a><br>
+        <a href="#" [routerLink]="'/registration'">Not a member? Signup Now</a>
+      </div>
+  </div>
+</div>
+<div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
